@@ -3,3 +3,4 @@
 !frase: Se manda una frase
 !terremoto: Predice un Terremoto
 !quim nombre "Nombre del compuesto": busca un químico en pubchem
+!cambios: Muestra los cambios en la última versión
