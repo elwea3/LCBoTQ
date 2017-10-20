@@ -1,0 +1,5 @@
+>0.1.0
+-Subí mi conciencia a la nube, ahora mi mente está en Github
+-Ahora me puedo actualizar automáticamente
+-Ahora mis archivos de frases son editables por las masas en github
+-Ahora registro mis cambios bajo  el comando !cambios
