@@ -11,20 +11,16 @@ with open("credenciales.txt") as file: #No incluiré la contraseña acá
     mail = file.readline()
     password = file.readline()
 
-puteadas = ['Yo les doy todas las herramientas, y no estudian','Para que me esfuerzo tanto','Los químicos son los únicos que les va bien','La verdad chiquillos hoy no estoy muy contenta que digamos... \
-    yo le dije una y una y otra vez, estudien chiquillos, y nada , yo les envio mi material, me compré un libro para que ustedes estudien, pero nisiquiera pero nisiquiera ven el material que yo les envio. ',
-    'Nunca pero nunca en todas las generaciones habia hecho una prueba tan estúpida como esta. Asi que antes de que digan por el patio que la profe hizo una tremenda , piénsenlo, asi que ojo, yo no puedo \
-    hacer nada, yo les envie hace que rato el material, es resposabilidad de ustedes si no estudian, ahora la metodología es que ustedes hagan la clase, no yo']
-frases = ['EL LiAlH4 es un reductor PO-DE-RO-SÍ-SI-MO','El NaNH2 es una base Tremendamente fuerte','enlace sigma :handshake: fuerte , en cambio el pi:raised_hands: como que si , como que no']
-comandos = '    !aiuda: Da lista de comandos \n\
-            !putear: Putea \n\
-            !frase: Se manda una frase\n\
-            !terremoto: Predice un terremoto\n\
-            !quim nombre "Nombre del compuesto": busca un químico en pubchem\n\
-            !wiki "busqueda": busca en wikipedia y entrega un resumen'
+#Agregar al repertorio de frases no requiere editar el código    
+with open("textos\frases.txt",'r') as file:
+    frases = file.readlines()
+with open("textos\lugares.txt",'r') as file:
+    lugares = file.readlines()
+with open("textos\puteadas.txt",'r') as file:
+    puteadas = file.readlines()
+with open("textos\ayuda.txt",'r') as file:
+    ayuda = file.read()
             
-lugares = ['Chile','Japòn','México','India','Haití','Tu poto']
-
 @client.event
 @asyncio.coroutine
 def on_ready():
@@ -46,7 +42,7 @@ def on_message(message):
     if message.author == client.user: #Para que no responda a si mismo
         return    
     elif message.content.startswith('!aiuda'):
-        yield from client.send_message(message.author, comandos)
+        yield from client.send_message(message.author, ayuda)
     elif message.content.startswith('!putear'):
         yield from client.send_message(message.channel, random.choice(puteadas))
     elif message.content.startswith('!frase'):
