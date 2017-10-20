@@ -1,0 +1,5 @@
+!aiuda: Da lista de comandos
+!putear: Putea
+!frase: Se manda una frase
+!terremoto: Predice un Terremoto
+!quim nombre "Nombre del compuesto": busca un químico en pubchem
