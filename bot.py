@@ -20,6 +20,14 @@ with open("textos\puteadas.txt",'r') as file:
     puteadas = file.readlines()
 with open("textos\ayuda.txt",'r') as file:
     ayuda = file.read()
+with open("textos\cambios.txt",'r') as file:
+    cambios = ""
+    cambios += "Versión" + file.readline()
+    for line in file:
+        if line[0] == ">":
+            break
+        else:    
+            cambios += '\n' + line
             
 @client.event
 @asyncio.coroutine
@@ -43,6 +51,8 @@ def on_message(message):
         return    
     elif message.content.startswith('!aiuda'):
         yield from client.send_message(message.author, ayuda)
+    elif message.content.startswith('!cambios'):
+        yield from client.send_message(message.author, cambios)
     elif message.content.startswith('!putear'):
         yield from client.send_message(message.channel, random.choice(puteadas))
     elif message.content.startswith('!frase'):
