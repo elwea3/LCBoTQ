@@ -63,5 +63,4 @@ def on_message(message):
         if input in busqueda:
             yield from client.send_message(message.channel, wikipedia.summary(input))
 
-if __name__ == '__main__':
-    client.run(mail,password)
+client.run(mail,password)
