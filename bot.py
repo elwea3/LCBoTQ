@@ -4,6 +4,7 @@ import random
 import pubchempy as pcp
 import wikipedia
 
+
 wikipedia.set_lang("es")
 client = discord.Client()
 
@@ -11,16 +12,17 @@ with open("credenciales.txt") as file: #No incluiré la contraseña acá
     mail = file.readline()
     password = file.readline()
 
-#Agregar al repertorio de frases no requiere editar el código    
-with open("textos\frases.txt",'r') as file:
+#Agregar al repertorio de frases no requiere editar el código
+
+with open("textos/frases.txt",'r') as file:
     frases = file.readlines()
-with open("textos\lugares.txt",'r') as file:
+with open("textos/lugares.txt",'r') as file:
     lugares = file.readlines()
-with open("textos\puteadas.txt",'r') as file:
+with open("textos/puteadas.txt",'r') as file:
     puteadas = file.readlines()
-with open("textos\ayuda.txt",'r') as file:
+with open("textos/ayuda.txt",'r') as file:
     ayuda = file.read()
-with open("textos\cambios.txt",'r') as file:
+with open("textos/cambios.txt",'r') as file:
     cambios = ""
     cambios += "Versión" + file.readline()
     for line in file:
