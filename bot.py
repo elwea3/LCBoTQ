@@ -22,7 +22,7 @@ with open("textos/puteadas.txt",'r') as file:
     puteadas = file.readlines()
 with open("textos/ayuda.txt",'r') as file:
     ayuda = file.read()
-with open("textos/changelog.txt",'r') as file:
+with open("changelog.txt",'r') as file:
     cambios = ""
     cambios += "Versión" + file.readline()
     for line in file:
