@@ -9,9 +9,7 @@ wikipedia.set_lang("es")
 client = discord.Client()
 
 with open("credenciales.txt") as file: #No incluiré la contraseña acá
-    mail = file.readline()
-    password = file.readline()
-
+    token = file.read().strip()
 #Agregar al repertorio de frases no requiere editar el código
 
 with open("textos/frases.txt",'r') as file:
@@ -75,4 +73,4 @@ def on_message(message):
         if input in busqueda:
             yield from client.send_message(message.channel, wikipedia.summary(input))
 
-client.run(mail,password)
+client.run(token)
